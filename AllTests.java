@@ -57,19 +57,22 @@ public class AllTests {
 			driver.findElement(By.xpath("//*[@id=\"app\"]/div[1]/div[2]/div[2]/div/div/form/div[1]/div[2]/div[3]/div/div[1]/div/div[2]/input"))
 					.sendKeys(sheet.getRow(i).getCell(4).getStringCellValue());
 			
-			WebElement uexists = driver.findElement(By.xpath("/html/body/div/div[1]/div[2]/div[2]/div/div/form/div[1]/div[2]/div[3]/div/div[1]/div/span"));
-//			al.enterPassword(sheet.getRow(i).getCell(5).getStringCellValue());
-//			al.enterConfirmPassword(sheet.getRow(i).getCell(5).getStringCellValue());
-//			Thread.sleep(2000);
-//			al.clickOnPIMSave();
-			if(uexists.getText() == "Username already exists") 
-				System.out.println("Username already exists. User cannot be added");
-			else {
-				al.enterPassword(sheet.getRow(i).getCell(5).getStringCellValue());
-				al.enterConfirmPassword(sheet.getRow(i).getCell(5).getStringCellValue());
-				Thread.sleep(2000);
-				al.clickOnPIMSave();
-			}
+			//WebElement uexists = driver.findElement(By.xpath("/html/body/div/div[1]/div[2]/div[2]/div/div/form/div[1]/div[2]/div[3]/div/div[1]/div/span"));
+			al.enterPassword(sheet.getRow(i).getCell(5).getStringCellValue());
+			al.enterConfirmPassword(sheet.getRow(i).getCell(5).getStringCellValue());
+			Thread.sleep(2000);
+			al.clickOnPIMSave();
+//			if(driver.findElement(By.xpath("/html/body/div/div[1]/div[2]/div[2]/div/div/form/div[1]/div[2]/div[3]/div/div[1]/div/span")).getText()!= "Username already exists") 
+//				{
+//				al.enterPassword(sheet.getRow(i).getCell(5).getStringCellValue());
+//				al.enterConfirmPassword(sheet.getRow(i).getCell(5).getStringCellValue());
+//				Thread.sleep(2000);
+//				al.clickOnPIMSave();
+//				
+//				}
+//			else {
+//				System.out.println("Username already exists. User cannot be added");
+//			}
 			
 			Thread.sleep(4000);
 			la.logoutApp();
